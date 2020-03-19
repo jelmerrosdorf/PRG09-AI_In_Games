@@ -53,10 +53,13 @@ class ChessPiece extends GameObject {
     }
 }
 class Tile extends ChessPiece {
-    constructor(color) {
+    constructor() {
         super();
         this.width = Board.getInstance().getTileSize();
         this.height = Board.getInstance().getTileSize();
+        this.style.backgroundColor = "white";
+    }
+    setColor(color) {
         this.style.backgroundColor = color;
     }
     update() {
@@ -80,7 +83,8 @@ class Board {
             Board.instance = new Board();
             for (let i = 0; i < Board.getInstance().getSize(); i++) {
                 for (let j = 0; j < Board.getInstance().getSize(); j++) {
-                    let t = new Tile((i + j) % 2 == 0 ? "#ffffff" : "#000000");
+                    let t = new Tile();
+                    t.setColor((i + j) % 2 == 0 ? "#ffffff" : "#000000");
                     t.initPosition([i, j]);
                     t.update();
                 }
