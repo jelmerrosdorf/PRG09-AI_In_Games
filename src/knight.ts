@@ -1,7 +1,7 @@
-/// <reference path="gameobject.ts" />
-/// <reference path="chesspiece.ts" />
+import Board from "./board";
+import ChessPiece from "./chesspiece";
 
-class Knight extends ChessPiece {
+export default class Knight extends ChessPiece {
 
     public getMoves(from:[number, number] = this.boardPosition): [number, number][] {
         let moves: [number, number][] = []

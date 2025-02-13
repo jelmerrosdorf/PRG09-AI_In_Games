@@ -1,6 +1,8 @@
-/// <reference path="knight.ts" />
+import GameState from "./gamestate";
+import King from "./king";
+import Knight from "./knight";
 
-class GameAI {
+export default class GameAI {
     // let the AI choose a move, and update both the
     // knight and the gamestate
     

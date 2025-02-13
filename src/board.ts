@@ -1,6 +1,6 @@
-/// <reference path="tile.ts" />
+import Tile from "./tile";
 
-class Board {
+export default class Board {
     private readonly BOARD_SIZE = 8;    // size of the board (smaller is easier for the AI)
     private tileSize = 100;             // size of a board tile 
     
@@ -12,19 +12,22 @@ class Board {
         this.tileSize = Math.floor(smallestSide / this.BOARD_SIZE);
     }
 
+    private init() {
+        // create board
+        for (let i = 0; i < Board.getInstance().getSize(); i++) {
+            for (let j = 0; j < Board.getInstance().getSize(); j++) {
+                let t:Tile = new Tile();
+                t.setColor((i + j)%2==0 ?  "#ffffff" : "#000000");
+                t.initPosition([i, j]);
+                t.update();
+            }
+        }
+    }
+
     public static getInstance(): Board {
         if (Board.instance == null) {
             Board.instance = new Board();
-
-            // create board
-            for (let i = 0; i < Board.getInstance().getSize(); i++) {
-                for (let j = 0; j < Board.getInstance().getSize(); j++) {
-                    let t:Tile = new Tile();
-                    t.setColor((i + j)%2==0 ?  "#ffffff" : "#000000");
-                    t.initPosition([i, j]);
-                    t.update();
-                }
-            }
+            Board.instance.init();
         }
         return Board.instance;
     }

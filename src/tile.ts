@@ -1,8 +1,7 @@
-/// <reference path="gameobject.ts" />
-/// <reference path="chesspiece.ts" />
+import Board from "./board";
+import ChessPiece from "./chesspiece";
 
-
-class Tile extends ChessPiece {
+export default class Tile extends ChessPiece {
 
     public constructor() {
         super()

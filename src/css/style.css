@@ -19,29 +19,14 @@ body * {
     background-repeat: no-repeat;
 }
 
-phone-component {
-	width:50px; min-height:92px;
-	background-image: url('../images/phone.png');
-}
-
-zombie-component {
-	width:67px; min-height:119px;
-	background-image: url('../images/zombie.png');
-}
-
-chicken-component {
-    width:67px; height:110px;
-    background-image: url('../images/chickenwalking.gif');
-}
-
 knight-component {
 	width:342px; min-height:600px;
-	background-image: url('../images/knight.png');
+	background-image: url('/images/knight.png');
 }
 
 king-component {
     width:178px; height:387px;
-    background-image: url('../images/king.png');
+    background-image: url('/images/king.png');
 }
 
 tile-component {

@@ -1,4 +1,6 @@
-class GameState {
+import Board from "./board";
+
+export default class GameState {
     public kingPos: [number, number];               // position of the king in the game in board coordinates
     public knightPositions: [number, number][];     // position of the knights in the game in board coordinates
 

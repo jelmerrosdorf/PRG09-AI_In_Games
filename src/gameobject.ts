@@ -1,4 +1,4 @@
-class GameObject extends HTMLElement {
+export default class GameObject extends HTMLElement {
 
     public div: HTMLElement;
     public pos: [number, number] = [0, 0];          // current position in screen coordinates
@@ -36,6 +36,7 @@ class GameObject extends HTMLElement {
         } else if (this.pos[1] < this.targetPos[1]) {
             this.pos[1] += this.speed[1]
         }
+
 
         //this.direction = (this.speed[0] < 0) ? 1 : -1;
         this.style.width = this.width + "px";

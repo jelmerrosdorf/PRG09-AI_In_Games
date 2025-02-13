@@ -1,7 +1,11 @@
-/// <reference path="gamestate.ts" />
-
 // TODO: Better chess board graphics
 // TODO: Add game over / win / restart game
+
+import Board from "./board";
+import GameAI from "./gameai";
+import GameState from "./gamestate";
+import King from "./king";
+import Knight from "./knight";
 
 class Game {
     
@@ -16,6 +20,8 @@ class Game {
  
     constructor() {
         Board.getInstance(); // init board
+
+        console.log("game constr")
 
         // create king for the player and put on middle of bottom row
         this.king = new King();

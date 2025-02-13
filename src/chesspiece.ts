@@ -1,7 +1,7 @@
-/// <reference path="gameobject.ts" />
+import Board from "./board";
+import GameObject from "./gameobject";
 
-
-abstract class ChessPiece extends GameObject {
+export default abstract class ChessPiece extends GameObject {
 
     public boardPosition: [number, number];     // position in board-coordinates
 
